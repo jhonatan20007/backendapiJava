@@ -1,29 +1,39 @@
 package com.example.demo.student;
 
+
+
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+ import javax.persistence.GeneratedValue;
+ import javax.persistence.GenerationType;
+ import javax.persistence.Id;
+// import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+
+
+
+
 @Entity
-@Table
-
+//@Table
+@Table(name = "student")
 public class student {
-
     @Id
-    @SequenceGenerator(name = "student_sequecen", sequenceName = "student_sequecen", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //  @Id
+    //  @SequenceGenerator(name = "student_sequecen", sequenceName = "student_sequecen", allocationSize = 1)
 
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequecen")
+    //  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "student_sequecen")
 
     private long id;
     private String name;
     private String email;
     private LocalDate dob;
     private Integer age;
+    
+   
+  
 
     public student() {
     }
